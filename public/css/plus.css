@@ -1,0 +1,14 @@
+.relative {
+  position: relative;
+  width: 1000px;
+  height: 400px;
+}
+
+.absolute {
+  position: absolute;
+  width: 550px;
+  height: 350px;
+  top: 0px;
+  left: 0px;
+}
+
