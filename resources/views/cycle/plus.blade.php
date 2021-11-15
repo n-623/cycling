@@ -50,9 +50,11 @@
         </div>
         
         <div class="row">
-            <div class="relative">
-              <img src="{{ asset('storage/image/plus.jpg')}}" alt="" />
-              <img src="{{ asset('storage/image/spot/large/' . $spot->image_path) }}" alt="" class="absolute" />
+            <div class="col-md-10 mx-auto">
+                <div class="relative">
+                  <img src="{{ asset('storage/image/plus.jpg')}}" alt="" />
+                  <img src="{{ asset('storage/image/spot/large/' . $spot->image_path) }}" alt="" class="absolute" />
+                </div>
             </div>
         </div>
         
