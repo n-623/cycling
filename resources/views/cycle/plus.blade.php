@@ -8,7 +8,7 @@
     <div class="container">
 
         <div class="row">
-                         <div class="col text-center">
+            <div class="col text-center">
                 <form method="post" action="{{ action('CycleController@more')}}">
                     @csrf
                     
