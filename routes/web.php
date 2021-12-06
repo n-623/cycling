@@ -30,8 +30,21 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
   Route::get('cycle/delete', 'Admin\CycleController@delete');
   
   
+  Route::get('course/add', 'Admin\CourseController@add');
+  Route::post('course/create', 'Admin\CourseController@create');
   Route::get('course/index', 'Admin\CourseController@index');
-
+  Route::get('course/edit', 'Admin\CourseController@edit');
+  Route::post('course/edit', 'Admin\CourseController@update');
+  Route::get('course/delete', 'Admin\CourseController@delete');
+  
+  
+  Route::get('highlight/add', 'Admin\HighlightController@add');
+  Route::post('highlight/create', 'Admin\HighlightController@create');
+  Route::get('highlight/index', 'Admin\HighlightController@index');
+  Route::get('highlight/edit', 'Admin\HighlightController@edit');
+  Route::post('highlight/edit', 'Admin\HighlightController@update');
+  Route::get('highlight/delete', 'Admin\HighlightController@delete');
+  
 });
 
 
@@ -43,6 +56,8 @@ Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+Route::get('cycle/index', 'CycleController@index');
+Route::get('cycle/show/{id}', 'CycleController@show');
 Route::get('cycle/more', 'CycleController@more');
 Route::post('cycle/more', 'CycleController@search');
 Route::get('cycle/plus', 'CycleController@plus');

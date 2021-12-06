@@ -1,20 +1,21 @@
 @extends('layouts.admin')
-@section('title', '観光記事一覧')
+@section('title', 'コース一覧')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <h4>観光記事一覧</h4>
+            <h4>コース一覧</h4>
         </div>
         
         <div class="row">
             <div class="col-md-4">
-                <a href="{{ action('Admin\CycleController@add') }}" role="button" class="btn btn-primary">新規作成</a>
+                <a href="{{ action('Admin\CourseController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
             
             <div class="col-md-4">
-                <a href="{{ action('Admin\CourseController@index') }}" role="button" class="btn btn-primary">コース一覧</a>
+                <a href="{{ action('Admin\CycleController@index') }}" role="button" class="btn btn-primary">観光記事一覧</a>
             </div>
+            
         </div>
         
         <div class="row">
@@ -30,24 +31,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($spots as $spot)
+                            @foreach($courses as $course)
                                 <tr>
-                                    <th>{{ $spot->id }}</th>
-                                    <td>{{ Str::limit($spot->name, 100) }}</td>
-                                    <td>{{ Str::limit($spot->body, 250) }}</td>
+                                    <th>{{ $course->id }}</th>
+                                    <td>{{ Str::limit($course->name, 100) }}</td>
+                                    <td>{{ Str::limit($course->body, 250) }}</td>
                                     <td>
                                         
                                         <div>
-                                            <a href="{{ action('Admin\CycleController@edit', ['id' => $spot->id]) }}">編集</a>
+                                            <a href="{{ action('Admin\CourseController@edit', ['id' => $course->id]) }}">編集</a>
                                         </div>
                                         <div>
-                                            <a href="{{ action('Admin\CycleController@delete', ['id' => $spot->id]) }}">削除</a>
+                                            <a href="{{ action('Admin\CourseController@delete', ['id' => $course->id]) }}">削除</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\HighlightController@add', ['id' => $course->id]) }}">新規作成</a>
+                                        </div>
+                                        <div>
+                                            <a href="{{ action('Admin\HighlightController@index', ['id' => $course->id]) }}">見どころ一覧</a>
                                         </div>
                                         
                                     </td>
 
                                         
-                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -56,4 +62,3 @@
             </div>
         </div>
     </div>
-@endsection

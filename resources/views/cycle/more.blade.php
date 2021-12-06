@@ -80,6 +80,7 @@
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
+                {{ $spots->links() }}
             </div>
         </div>
     </div>

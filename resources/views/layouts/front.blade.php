@@ -7,9 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
         <title>@yield('title')</title>
-        
 
-        
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
@@ -45,6 +43,11 @@
                     streetViewControl: true, //ストリートビュー コントロール                    
                     zoomControl: true,
                 };
+                
+                marker = new google.maps.Marker({
+                    position: empire,
+                    map: map,
+                });                
                 // 地図のインスタンスを作成します。第一引数にはマップを描画する領域、第二引数にはオプションを指定
                 mapObj = new google.maps.Map(map, opt);
             }

@@ -5,20 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Spot;
 use Storage;
+use App\Course;
+use App\Highlight;
 
 class CycleController extends Controller
 {
 
-  public function index()
+  public function index(Request $request)
   {
-    return view('cycle.index');
+    $items = Course::all();    
+    return view('cycle.index', ['items' => $items]);
   }
   
-  public function more(Request $reqest)
+  public function show($id)
   {
-    $spots = Spot::all();
-
-    
+    // dd($request->all(), $id);
+    $course = Course::find($id);
+    return view('cycle.show', ['course' => $course]);
+  }
+  
+  public function more(Request $request)
+  {
+    $spots = Spot::paginate(8);
     return view('cycle.more', ['spots' => $spots]);
   }
   

@@ -54,6 +54,20 @@
                 <div class="relative">
                   <img src="{{ asset('storage/image/plus.jpg')}}" alt="" />
                   <img src="{{ asset('storage/image/spot/large/' . $spot->image_path) }}" alt="" class="absolute" />
+                  
+                　<ul style="list-style: none;">
+                　   <h4>{{$spot->name}}</h4>
+                  　 <li>住所</li>
+                  　 <p>{{$spot->address}}</p>
+                  　 <li>電話番号</li>
+                  　 <p>{{$spot->tel}}</p>
+                  　 <li>営業時間</li>
+                  　 <p>{{$spot->hour}}</p>
+                  　 <li>休み</li>
+                  　 <p>{{$spot->holiday}}</p>
+                  　 <li>ホームページ</li>
+                  　 <p>{{$spot->url}}</p>
+                　</ul>                  
                 </div>
             </div>
         </div>
