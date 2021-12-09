@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <img src="{{ asset('storage/image/more_01.jpg')}}">
+    <img src="{{ Utl::imgPath('', 'more_01.jpg')}}">
 
     <div class="container">
         
@@ -64,7 +64,7 @@
                             <div class="image col-md-3 text-left mt-4">
                                 @if ($spot->image_path_s)
                                     <a href="{{ action('CycleController@plus', ['id' => $spot->id]) }}">
-                                    <img width="150px" src="{{ asset('storage/image/spot/small/' . $spot->image_path_s) }}"></a>
+                                    <img width="150px" src="{{ Utl::imgPath('spot/small', $spot->image_path_s) }}"></a>
                                 @endif
                             </div>
                             
@@ -85,7 +85,7 @@
         </div>
     </div>
     
-    <img src="{{ asset('storage/image/more_02.jpg')}}">
+    <img src="{{ Utl::imgPath('', 'more_02.jpg')}}">
 
     
 

@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <img src="{{ asset('storage/image/more_01.jpg')}}">
+    <img src="{{ Utl::imgPath('', 'more_01.jpg')}}">
 
     <div class="container">
 
@@ -52,8 +52,8 @@
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <div class="relative">
-                  <img src="{{ asset('storage/image/plus.jpg')}}" alt="" />
-                  <img src="{{ asset('storage/image/spot/large/' . $spot->image_path) }}" alt="" class="absolute" />
+                  <img src="{{ Utl::imgPath('', 'plus.jpg')}}" alt="" />
+                  <img src="{{ Utl::imgPath('spot/large', $spot->image_path) }}" alt="" class="absolute" />
                   
                 　<ul style="list-style: none;">
                 　   <h4>{{$spot->name}}</h4>
@@ -81,7 +81,7 @@
         
     </div>
     
-    <img src="{{ asset('storage/image/more_02.jpg')}}">
+    <img src="{{ Utl::imgPath('', 'more_02.jpg')}}">
 
 
 @endsection

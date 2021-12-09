@@ -3,12 +3,12 @@
 
 @section('content')
 
-    <img class="top" src="{{ asset('storage/image/course/' . $course->image_path) }}">
+    <img class="top" src="{{ Utl::imgPath('course', $course->image_path)}}">
     
     <div class="row">
             <div class="container">
                 <div class="text-center">
-                    <p>{{$course->body}}</p>
+                    <p>{!! nl2br(e( $course->body )) !!}</p>
                 </div>
                 
                 
@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="card-group mx-auto" style="max-width: 600px">
                           　<div class="card">
-                            　<img class="card-img-top" src="{{ asset('storage/image/course/map/' .$course->map_image_path)}}">
+                                <a href="{{$course->url}}"><img class="card-img-top" src="{{ Utl::imgPath('course/map', $course->map_image_path) }}"></a>
                           　</div>
                           　<div class="card">
                                 <div class="card-body">
@@ -47,7 +47,7 @@
                     <div class="row">
                         <div class="col-lg-2">
                             <div class="number">
-                            <img src="{{ asset('storage/image/highlight/number/' .$highlight->number_image_path)}}">
+                            <img src="{{ Utl::imgPath('highlight/number', $highlight->number_image_path) }}">
                             </div>
                         </div>
                         
@@ -55,9 +55,10 @@
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="highlight">
-                                    <img src="{{ asset('storage/image/highlight/' .$highlight->image_path)}}">
+                                    <img src="{{ Utl::imgPath('highlight', $highlight->image_path) }}">
                                     </div>
-                                    <p>{{$highlight->body}}</p>
+                                    <p><big>{{$highlight->mileage}}</big></p>
+                                    <p>{!! nl2br(e( $highlight->body )) !!}</p>
                                 </div>
                             </div>
                         </div>
