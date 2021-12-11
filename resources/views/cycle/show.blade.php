@@ -8,7 +8,7 @@
     <div class="row">
             <div class="container">
                 <div class="text-center">
-                    <p>{!! nl2br(e( $course->body )) !!}</p>
+                    <p>{!! Utl::nl2br(e( $course->body )) !!}</p>
                 </div>
                 
                 
@@ -58,7 +58,7 @@
                                     <img src="{{ Utl::imgPath('highlight', $highlight->image_path) }}">
                                     </div>
                                     <p><big>{{$highlight->mileage}}</big></p>
-                                    <p>{!! nl2br(e( $highlight->body )) !!}</p>
+                                    <p>{!! Utl::nl2br(e( $highlight->body )) !!}</p>
                                 </div>
                             </div>
                         </div>

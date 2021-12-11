@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CycleController@index');
 
 Route::group(['prefix' => 'cycle'], function() {
   Route::get('/', 'CycleController@index');

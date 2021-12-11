@@ -8,7 +8,12 @@ use \App\User;
 */
 class Utl
 {
-  
+  /**
+   * 改行を<br/>タグに変換(pgsql対応)
+   */
+  public static function nl2br($str) {
+    return str_replace(array('\r\n', "\r\n", "\n", "\r"), '<br/>', $str);
+  }  
   
   /**
   * StorageTypeがs3であるかの真偽値を返す
