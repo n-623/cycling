@@ -44,12 +44,13 @@
                     zoomControl: true,
                 };
                 
-                marker = new google.maps.Marker({
-                    position: empire,
-                    map: map,
-                });                
                 // 地図のインスタンスを作成します。第一引数にはマップを描画する領域、第二引数にはオプションを指定
                 mapObj = new google.maps.Map(map, opt);
+                
+                let marker = new google.maps.Marker({
+                    position: empire,
+                    map: mapObj,
+                });                
             }
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyAgNiDaw6GbJSfgGQQYPzkf7xvIlJfCtYk&callback=initMap" async defer></script>
