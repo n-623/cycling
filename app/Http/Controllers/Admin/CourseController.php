@@ -23,9 +23,11 @@ class CourseController extends Controller
     
       $form = $request->all();
     
-      $path = $request->file('image')->store('public/image/course');
+    //   $path = $request->file('image')->store('public/image/course');
+      $path = self::storeImage('public/image/course', $request->file('image'));
       $course->image_path = basename($path);
-      $path = $request->file('image_m')->store('public/image/course/map');
+      // $path = $request->file('image_m')->store('public/image/course/map');
+      $path = self::storeImage('public/image/course/map', $request->file('image_m'));
       $course->map_image_path = basename($path);
       
 
@@ -60,14 +62,18 @@ class CourseController extends Controller
       $form = $request->all();
       
       if($request->hasFile('image')) {
-            Storage::delete('public/image/course'. $course->image_path);
-            $path = $request->file('image')->store('public/image/course');
+            // Storage::delete('public/image/course'. $course->image_path);
+            self::deleteImage('public/image/course', $course->image_path);
+            // $path = $request->file('image')->store('public/image/course');
+            $path = self::storeImage('public/image/course', $request->file('image'));
             $course->image_path = basename($path);
        }
        
       if($request->hasFile('image_m')) {
-            Storage::delete('public/image/course/map'. $course->map_image_path);
-            $path = $request->file('image_m')->store('public/image/course/map');
+            // Storage::delete('public/image/course/map'. $course->map_image_path);
+            self::deleteImage('public/image/course/map', $course->map_image_path);
+            // $path = $request->file('image_m')->store('public/image/course/map');
+            $path = self::storeImage('public/image/course/map', $request->file('image_m'));
             $course->map_image_path = basename($path);
        }
        

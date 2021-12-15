@@ -21,10 +21,12 @@ class HighlightController extends Controller
     
       $form = $request->all();
     
-      $path = $request->file('image')->store('public/image/highlight');
+      // $path = $request->file('image')->store('public/image/highlight');
+      $path = self::storeImage('public/image/highlight', $request->file('image'));
       $highlight->image_path = basename($path);
       
-      $path = $request->file('image_n')->store('public/image/highlight/number');
+      // $path = $request->file('image_n')->store('public/image/highlight/number');
+      $path = self::storeImage('public/image/highlight/number', $request->file('image_n'));
       $highlight->number_image_path = basename($path);
       
       unset($form['_token']);
@@ -59,14 +61,18 @@ class HighlightController extends Controller
       $form = $request->all();
       
       if($request->hasFile('image')) {
-            Storage::delete('public/image/highlight'. $highlight->image_path);
-            $path = $request->file('image')->store('public/image/highlight');
+            // Storage::delete('public/image/highlight'. $highlight->image_path);
+            self::deleteImage('public/image/highlight', $highlight->image_path);
+            // $path = $request->file('image')->store('public/image/highlight');
+            $path = self::storeImage('public/image/highlight', $request->file('image'));
             $highlight->image_path = basename($path);
        }
        
       if($request->hasFile('image_n')) {
-            Storage::delete('public/image/highlight/number'. $highlight->number_image_path);
-            $path = $request->file('image_n')->store('public/image/highlight/number');
+            // Storage::delete('public/image/highlight/number'. $highlight->number_image_path);
+            self::deleteImage('public/image/highlight/number', $highlight->number_image_path);
+            // $path = $request->file('image_n')->store('public/image/highlight/number');
+            $path = self::storeImage('public/image/highlight/number', $request->file('image_n'));
             $highlight->number_image_path = basename($path);
        }
        
