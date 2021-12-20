@@ -9,7 +9,7 @@
 
         <div class="row">
             <div class="col text-center">
-                <form method="post" action="{{ action('CycleController@more')}}">
+                <form method="get" action="{{ action('CycleController@search')}}">
                     @csrf
                     
                     <div class="form-group">
