@@ -51,7 +51,6 @@ class CycleController extends Controller
     $spots = $query->orderBy('id', 'asc')->paginate(8);
   
     return view('cycle.more', ['spots' => $spots]);
-
   }
   
   //「\\」「%」「_」などの記号を文字としてエスケープさせる

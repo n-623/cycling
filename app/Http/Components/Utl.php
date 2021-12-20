@@ -13,7 +13,14 @@ class Utl
    */
   public static function nl2br($str) {
     return str_replace(array('\r\n', "\r\n", "\n", "\r"), '<br/>', $str);
-  }  
+  } 
+  
+  /**
+   * \r\nを除去
+   */
+  public static function rmnl($str) {
+    return str_replace(array('\r\n', "\r\n", "\n", "\r"), '', $str);
+  }
   
   /**
   * StorageTypeがs3であるかの真偽値を返す

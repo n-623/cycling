@@ -10,7 +10,7 @@
         
         <div class="row">
              <div class="col text-center">
-                <form method="post" action="{{ action('CycleController@more')}}">
+                <form method="get" action="{{ action('CycleController@search')}}">
                     @csrf
                     
                     <div class="form-group">
@@ -73,14 +73,14 @@
                                     {{ str_limit($spot->name, 150) }}
                                 </div>
                                 <div class="body mt-3">
-                                    {{ str_limit($spot->body, 1000) }}
+                                    {{ str_limit(Utl::rmnl($spot->body), 1000) }}
                                 </div>
                             </div>
                         </div>
                     </div>
                     <hr color="#c0c0c0">
                 @endforeach
-                {{ $spots->links() }}
+                {{ $spots->appends(request()->query())->links() }}
             </div>
         </div>
     </div>

@@ -56,7 +56,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('cycle/index', 'CycleController@index');
 Route::get('cycle/show/{id}', 'CycleController@show');
-Route::get('cycle/more', 'CycleController@more');
-Route::post('cycle/more', 'CycleController@search');
+Route::get('cycle/more', 'CycleController@search');
+// Route::post('cycle/more', 'CycleController@search');
 Route::get('cycle/plus', 'CycleController@plus');
 
