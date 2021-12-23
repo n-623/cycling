@@ -1,7 +1,6 @@
 <?php
 /**
 * Utlクラスのサービスプロバイダ
-* 松田追加
 */
 
 namespace App\Providers;

@@ -4,7 +4,6 @@ use Auth;
 use \App\User;
 /**
 * Utlファサードの処理実装クラス
-* 松田追加
 */
 class Utl
 {
